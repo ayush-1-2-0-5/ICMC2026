@@ -1,21 +1,21 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 // Platinum and Silver sponsors data
-const platinumSponsors = [
-  { name: "Odyssey", image: "/placeholder.svg" },
-  { name: "Thales", image: "/placeholder.svg" },
-  { name: "Exclusive Networks", image: "/placeholder.svg" },
-  { name: "DRDO", image: "/placeholder.svg" },
-  { name: "NBHM", image: "/placeholder.svg" },
-];
+// const platinumSponsors = [
+//   { name: "Odyssey", image: "/placeholder.svg" },
+//   { name: "Thales", image: "/placeholder.svg" },
+//   { name: "Exclusive Networks", image: "/placeholder.svg" },
+//   { name: "DRDO", image: "/placeholder.svg" },
+//   { name: "NBHM", image: "/placeholder.svg" },
+// ];
 
-const silverSponsors = [
-  { name: "Elmack Engg Services", image: "/placeholder.svg" },
-  { name: "Payatu", image: "/placeholder.svg" },
-  { name: "Zoho", image: "/placeholder.svg" },
-  { name: "SkillsDA", image: "/placeholder.svg" },
-];
+// const silverSponsors = [
+//   { name: "Elmack Engg Services", image: "/placeholder.svg" },
+//   { name: "Payatu", image: "/placeholder.svg" },
+//   { name: "Zoho", image: "/placeholder.svg" },
+//   { name: "SkillsDA", image: "/placeholder.svg" },
+// ];
 
 // Object holding the ICMC links for each year
 const icmcLinks = {
@@ -67,7 +67,7 @@ export function SponsorsSection() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {(
-              // Explicitly typing `year` to the keys of `icmcLinks`
+              
               Object.keys(icmcLinks) as Array<keyof typeof icmcLinks>
             ).map((year) => (
               <Link key={year} href={icmcLinks[year]} passHref>
