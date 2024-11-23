@@ -58,15 +58,15 @@ export function NavHeader() {
             </div>
             
             <div className="flex items-center gap-4">
-              <Link href="https://www.ramanujanmathsociety.org/" target="_blank" aria-label="Ramanujan Math Society">
+              {/* <Link href="https://www.ramanujanmathsociety.org/" target="_blank" aria-label="Ramanujan Math Society">
                 <Image className="rounded-full bg-white p-1" src="/ramanujan.jpg" alt="Ramanujan Logo" width={75} height={75} />
-              </Link>
+              </Link> */}
               <Link href="https://crsind.in/" target="_blank" aria-label="CRSI">
                 <Image className="rounded-full bg-white p-1" src="/crsi.jpg" alt="CRSI Logo" width={75} height={75} />
               </Link>
-              <Link href="https://setsindia.in/" target="_blank" aria-label="SETS India">
+              {/* <Link href="https://setsindia.in/" target="_blank" aria-label="SETS India">
                 <Image className="rounded-full bg-white p-1" src="/sets.jpg" alt="SETS Logo" width={75} height={75} />
-              </Link>
+              </Link> */}
             </div>
           </div>
         </nav>

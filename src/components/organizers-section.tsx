@@ -33,20 +33,20 @@ export function OrganizersSection() {
             IN ASSOCIATION WITH
           </h2>
           <div className="flex justify-center gap-8 flex-wrap">
-            <Image
+            {/* <Image
               src="/sets.jpg"
               alt="Mathematical Society Logo"
               width={150}
               height={150}
               className="rounded-full bg-white p-2"
-            />
-            <Image
+            /> */}
+            {/* <Image
               src="/ramanujan.jpg"
               alt="CRSI Logo"
               width={150}
               height={150}
               className="rounded-full bg-white p-2"
-            />
+            /> */}
             <Image
               src="/crsi.jpg"
               alt="Research Society Logo"
