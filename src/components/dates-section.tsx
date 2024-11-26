@@ -1,14 +1,16 @@
 const importantDates = [
-    { date: "Sept 20, 2024", event: "Paper Submission deadline" },
-    { date: "Oct 18, 2024", event: "Author notification" },
-    { date: "Dec 18, 2024", event: "Conference begins" },
+    { date: "June 30, 2025", event: "Paper Submission deadline" },
+    { date: "September 30, 2025", event: "Notification to Authors" },
+    { date: "October 10, 2025", event: "Last Date of Author Registration" },
+    { date: "October 15, 2025", event: "Final Manuscripts Due" },
+    { date: "January 08, 2026", event: "Conference begins" },
   ]
   
   const updates = [
-    { date: "Mar 4, 2024", update: "Website launched" },
-    { date: "Aug 12, 2024", update: "Paper submission link is up" },
-    { date: "Sep 3, 2024", update: "Tentative details about tutorials added" },
-    { date: "Sep 20, 2024", update: "Paper submission closed" },
+    { date: "November 23, 2024", update: "Website launched" },
+    // { date: "Aug 12, 2024", update: "Paper submission link is up" },
+    // { date: "Sep 3, 2024", update: "Tentative details about tutorials added" },
+    { date: "June 30, 2025", update: "Paper submission closed" },
   ]
   
   export function DatesSection() {
