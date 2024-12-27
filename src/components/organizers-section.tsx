@@ -11,7 +11,7 @@ export function OrganizersSection() {
           </h2>
           <div className="flex justify-center gap-8 flex-wrap">
             <Image
-              src="/logo2.jpg"
+              src="/c3-sdf.jpg"
               alt="LNMIIT Logo"
               width={150}
               height={150}
