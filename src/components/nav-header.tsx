@@ -58,14 +58,14 @@ export function NavHeader() {
             </div>
             
             <div className="flex items-center gap-4">
-              <Link href="https://lnmiit.ac.in/coe/c3sdf/" target="_blank" aria-label="Ramanujan Math Society">
-                <Image className="rounded-full bg-white p-1" src="/c3-sdf.jpg" alt="Ramanujan Logo" width={75} height={75} />
+              <Link href="https://lnmiit.ac.in/coe/c3sdf/" target="_blank" aria-label="C3-sdf">
+                <Image className="rounded-full bg-white p-1" src="/c3-sdf.jpg" alt="c3-sdf Logo" width={75} height={75} />
               </Link>
               <Link href="https://crsind.in/" target="_blank" aria-label="CRSI">
                 <Image className="rounded-full bg-white p-1" src="/crsi.jpg" alt="CRSI Logo" width={75} height={75} />
               </Link>
-              <Link href="https://setsindia.in/" target="_blank" aria-label="SETS India">
-                <Image className="rounded-full bg-white p-1" src="/logo3.jpg" alt="SETS Logo" width={75} height={75} />
+              <Link href="https://lnmiit.ac.in/coe/cmfc/" target="_blank" aria-label="cmfc Logo">
+                <Image className="rounded-full bg-white p-1" src="/logo3.jpg" alt="cmfc Logo" width={75} height={75} />
               </Link>
             </div>
           </div>
