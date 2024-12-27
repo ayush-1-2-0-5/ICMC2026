@@ -43,7 +43,7 @@ export function NavHeader() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
   return (
-    <header className="relative">
+    <header className="relative z-50">
       <div className="bg-gradient-to-r from-orange-600 to-orange-400 text-white">
         <nav className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -72,7 +72,7 @@ export function NavHeader() {
         </nav>
       </div>
       
-      <div className="bg-[#c17f59] py-2">
+      <div className="bg-[#c17f59] py-2 relative">
         <div className="container mx-auto px-4">
           {/* Desktop Navigation */}
           <div className="hidden md:flex justify-center items-center space-x-6">
@@ -90,7 +90,7 @@ export function NavHeader() {
                   )}
                 </button>
                 {item.items && openDropdown === item.label && (
-                  <div className="absolute left-0 mt-1 w-64 bg-[#c17f59] shadow-lg">
+                  <div className="absolute left-0 mt-1 w-64 bg-[#c17f59] shadow-lg z-50">
                     <div className="py-1">
                       {item.items.map((subItem) => (
                         <span
@@ -163,4 +163,3 @@ export function NavHeader() {
     </header>
   )
 }
-
