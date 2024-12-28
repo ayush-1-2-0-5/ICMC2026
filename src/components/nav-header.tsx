@@ -55,10 +55,6 @@ export function NavHeader() {
   const pathname = usePathname()
   const router = useRouter()
 
-  const handlePastEditionsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    router.push('/?scrollTo=sponsors')
-  }
 
   useEffect(() => {
     // Close dropdown and mobile menu when the route changes
@@ -102,33 +98,23 @@ export function NavHeader() {
           <div className="hidden md:flex justify-center items-center space-x-6">
             {navItems.map((item) => (
               <div key={item.label} className="relative group">
-                {item.label === "PAST EDITIONS" ? (
-                  <a
-                    href="#"
-                    className="text-white hover:text-orange-100 transition-colors px-3 py-2 flex items-center gap-1"
-                    onClick={handlePastEditionsClick}
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link 
-                    href={item.label === "HOME" ? "/" : `/${item.label.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-white hover:text-orange-100 transition-colors px-3 py-2 flex items-center gap-1"
-                    onClick={(e) => {
-                      if (item.items) {
-                        e.preventDefault();
-                        setOpenDropdown(openDropdown === item.label ? null : item.label);
-                      }
-                    }}
-                  >
-                    {item.label}
-                    {item.items && (
-                      <ChevronDown 
-                        className={`h-4 w-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`}
-                      />
-                    )}
-                  </Link>
-                )}
+                <Link 
+                  href={item.label === "HOME" ? "/" : `/${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="text-white hover:text-orange-100 transition-colors px-3 py-2 flex items-center gap-1"
+                  onClick={(e) => {
+                    if (item.items) {
+                      e.preventDefault();
+                      setOpenDropdown(openDropdown === item.label ? null : item.label);
+                    }
+                  }}
+                >
+                  {item.label}
+                  {item.items && (
+                    <ChevronDown 
+                      className={`h-4 w-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`}
+                    />
+                  )}
+                </Link>
                 {item.items && openDropdown === item.label && (
                   <div className="absolute top-full left-0 bg-[#c17f59] mt-2 py-2 rounded-md shadow-lg z-10">
                     {item.items.map((subItem) => (
@@ -204,17 +190,7 @@ export function NavHeader() {
                     href={item.label === "HOME" ? "/" : `/${item.label.toLowerCase().replace(/\s+/g, '-')}`}
                     className="text-white hover:text-orange-100 py-2 w-full text-left block"
                   >
-                    {item.label === "PAST EDITIONS" ? (
-                      <a 
-                        href="#"
-                        className="text-white hover:text-orange-100 py-2 w-full text-left block"
-                        onClick={handlePastEditionsClick}
-                      >
-                        {item.label}
-                      </a>
-                    ) : (
-                      <span>{item.label}</span>
-                    )}
+                    <span>{item.label}</span>
                   </Link>
                 )}
               </div>
