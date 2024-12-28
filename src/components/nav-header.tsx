@@ -1,46 +1,70 @@
 "use client"
-
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from 'lucide-react'
 
-const navItems = [
-  { label: "Home" },
+type NavItem = {
+  label: string;
+  items?: string[];
+}
+
+const navItems: NavItem[] = [
+  { label: "HOME" },
   { 
-    label: "Technical Program",
+    label: "ABOUT",
     items: [
-      "Call for Papers",
-      "Accepted Papers",
-      "Tutorials",
-      "Invited Talks",
+      "Institute",
+      "Math Department",
+      "ICMC"
     ]
   },
+  { label: "SPEAKERS" },
+  { label: "COMMITTEE" },
   { 
-    label: "Registration & Venue",
+    label: "CALL FOR PAPERS",
     items: [
-      "Venue & Accommodation",
-      "Registration Fee Details",
-      "Registration for Indian Participants",
-      "Registration for Foreign Participants",
+      "Contribution Tracks",
+      "Author Guidelines",
+      "Review Process", 
+      "Submit Your Paper",
+      "Accepted Papers"
     ]
   },
+  { label: "REGISTRATION" },
+  { label: "PAST EDITIONS" },
   { 
-    label: "Committees",
+    label: "VENUE",
     items: [
-      "Program Committee",
-      "General Chairs",
-      "Organizing Committee",
-      "Advisory Committee",
+      "LNMIIT",
+      "How To Reach?",
+      "Accommodation",
+      "Around the Campus", 
+      "Nearby Tourist Places",
+      "VISA Information"
     ]
   },
-  { label: "Sponsors" },
-  { label: "Contact" },
+  { label: "WORKSHOP" },
+  { label: "CONTACT US" }
 ]
 
 export function NavHeader() {
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const pathname = usePathname()
+  const router = useRouter()
+
+  const handlePastEditionsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    router.push('/?scrollTo=sponsors')
+  }
+
+  useEffect(() => {
+    // Close dropdown and mobile menu when the route changes
+    setIsOpen(false)
+    setOpenDropdown(null)
+  }, [pathname])
 
   return (
     <header className="relative z-50">
@@ -78,36 +102,55 @@ export function NavHeader() {
           <div className="hidden md:flex justify-center items-center space-x-6">
             {navItems.map((item) => (
               <div key={item.label} className="relative group">
-                <button 
-                  className="text-white hover:text-orange-100 transition-colors px-3 py-2 flex items-center gap-1"
-                  onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
-                >
-                  {item.label}
-                  {item.items && (
-                    <ChevronDown 
-                      className={`h-4 w-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`}
-                    />
-                  )}
-                </button>
+                {item.label === "PAST EDITIONS" ? (
+                  <a
+                    href="#"
+                    className="text-white hover:text-orange-100 transition-colors px-3 py-2 flex items-center gap-1"
+                    onClick={handlePastEditionsClick}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link 
+                    href={item.label === "HOME" ? "/" : `/${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="text-white hover:text-orange-100 transition-colors px-3 py-2 flex items-center gap-1"
+                    onClick={(e) => {
+                      if (item.items) {
+                        e.preventDefault();
+                        setOpenDropdown(openDropdown === item.label ? null : item.label);
+                      }
+                    }}
+                  >
+                    {item.label}
+                    {item.items && (
+                      <ChevronDown 
+                        className={`h-4 w-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`}
+                      />
+                    )}
+                  </Link>
+                )}
                 {item.items && openDropdown === item.label && (
-                  <div className="absolute left-0 mt-1 w-64 bg-[#c17f59] shadow-lg z-50">
-                    <div className="py-1">
-                      {item.items.map((subItem) => (
-                        <span
-                          key={subItem}
-                          className="block px-4 py-2 text-white hover:bg-[#a66c4a] cursor-default"
-                        >
-                          {subItem}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="absolute top-full left-0 bg-[#c17f59] mt-2 py-2 rounded-md shadow-lg z-10">
+                    {item.items.map((subItem) => (
+                      <Link
+                        key={subItem}
+                        href={
+                          item.label === "VENUE" && subItem === "LNMIIT"
+                            ? "https://lnmiit.ac.in/"
+                            : item.label === "VENUE" && subItem === "Nearby Tourist Places"
+                            ? "https://www.makemytrip.com/tripideas/places-to-visit-in-jaipur"
+                            : `/${item.label.toLowerCase().replace(/\s+/g, '-')}/${subItem.toLowerCase().replace(/\s+/g, '-')}`
+                        }
+                        className="block px-4 py-2 text-white hover:bg-[#a66c4a]"
+                      >
+                        {subItem}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
             ))}
           </div>
-
-          {/* Mobile Navigation Button */}
           <div className="md:hidden flex justify-center">
             <button
               className="text-white"
@@ -119,8 +162,7 @@ export function NavHeader() {
           </div>
         </div>
       </div>
-      
-      {/* Mobile Navigation Menu */}
+
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-[#c17f59] py-4 z-50">
           <div className="flex flex-col items-start gap-2 px-4">
@@ -140,20 +182,40 @@ export function NavHeader() {
                     {openDropdown === item.label && (
                       <div className="pl-4 mt-2 space-y-2">
                         {item.items.map((subItem) => (
-                          <span
+                          <Link
                             key={subItem}
-                            className="block text-white hover:bg-[#a66c4a] py-2 px-2 cursor-default"
+                            href={
+                              item.label === "VENUE" && subItem === "LNMIIT"
+                                ? "https://lnmiit.ac.in/"
+                                : item.label === "VENUE" && subItem === "Nearby Tourist Places"
+                                ? "https://www.makemytrip.com/tripideas/places-to-visit-in-jaipur"
+                                : `/${item.label.toLowerCase().replace(/\s+/g, '-')}/${subItem.toLowerCase().replace(/\s+/g, '-')}`
+                            }
+                            className="block text-white hover:bg-[#a66c4a] py-2 px-2"
                           >
                             {subItem}
-                          </span>
+                          </Link>
                         ))}
                       </div>
                     )}
                   </div>
                 ) : (
-                  <button className="text-white hover:text-orange-100 py-2 w-full text-left">
-                    {item.label}
-                  </button>
+                  <Link 
+                    href={item.label === "HOME" ? "/" : `/${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="text-white hover:text-orange-100 py-2 w-full text-left block"
+                  >
+                    {item.label === "PAST EDITIONS" ? (
+                      <a 
+                        href="#"
+                        className="text-white hover:text-orange-100 py-2 w-full text-left block"
+                        onClick={handlePastEditionsClick}
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <span>{item.label}</span>
+                    )}
+                  </Link>
                 )}
               </div>
             ))}
@@ -163,3 +225,4 @@ export function NavHeader() {
     </header>
   )
 }
+

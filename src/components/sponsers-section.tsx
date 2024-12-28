@@ -23,12 +23,10 @@ export function SponsorsSection() {
   return (
     <section className="py-16 bg-gradient-to-b from-white to-green-50">
       <div className="container mx-auto px-4 space-y-12">
-        {/* Past ICMC Proceedings */}
-        <div className="space-y-6">
-          <h3 className="text-xl font-semibold text-center bg-blue-600 text-white py-2 px-6 rounded-full inline-block mx-auto">
+        <div className="space-y-6 items-center">
+          <h3 className="text-xl font-semibold text-center  bg-blue-600 text-white py-2 px-6 rounded-full inline-block mx-auto">
             Past ICMC Proceedings
           </h3>
-
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {(Object.keys(icmcLinks) as Array<keyof typeof icmcLinks>).map((year) => (
               <Link key={year} href={icmcLinks[year]}>
