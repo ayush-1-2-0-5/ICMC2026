@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
     label: "ABOUT",
     items: [
       "Institute",
-      "Math Department",
+      "C3-SDF",
       "ICMC"
     ]
   },
