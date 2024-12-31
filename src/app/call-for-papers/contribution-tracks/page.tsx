@@ -39,8 +39,7 @@ export default function ContributionTracks() {
       number: "IX",
       name: "Security and Privacy",
       chairs: [
-        "Arup Kumar Pal, IIT Dhanbad, India",
-        "Sk Hafizul Islam, Indian Institute of Information Technology, Kalyani, India"
+        "Arup Kumar Pal, IIT Dhanbad, India"
       ],
       coChairs: "To be announced"
     },
@@ -49,7 +48,6 @@ export default function ContributionTracks() {
       name: "Blockchain Technology and Its Applications",
       chair: "Sangram Ray, NIT Sikkim, India",
       coChairs: [
-        "Mou Dasgupta, National Institute of Technology Raipur, India",
         "Kartick Sutradhar, Indian Institute of Information Technology Sri City, India",
         "Suman Majumder, Nanyang Technological University (N.T.U), Singapore"
       ]

@@ -4,6 +4,7 @@ const importantDates = [
     { date: "October 10, 2025", event: "Last Date of Author Registration" },
     { date: "October 15, 2025", event: "Final Manuscripts Due" },
     { date: "January 08, 2026", event: "Conference begins" },
+    { date: "January 10, 2026", event: "Conference ends" }
   ]
   
   const updates = [
@@ -32,8 +33,6 @@ const importantDates = [
                 ))}
               </div>
             </div>
-  
-            {/* Website Updates */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <h3 className="text-xl font-semibold bg-blue-600 text-white p-4">
                 Website Updates
