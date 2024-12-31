@@ -70,7 +70,7 @@ export function NavHeader() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <Link href="https://lnmiit.ac.in" target="_blank" aria-label="LNMIIT Website">
-                <Image className="rounded-full bg-white p-1" src="/lnmiitlogo.jpg" alt="LNMIIT Logo" width={75} height={75} />
+                <Image className="bg-white p-1" src="/lnmiitnewlogo.png" alt="LNMIIT Logo" width={75} height={75} />
               </Link>
               <div className="text-center md:text-left">
                 <h1 className="text-xl md:text-2xl font-bold">12th International Conference on Mathematics and Computing</h1>
