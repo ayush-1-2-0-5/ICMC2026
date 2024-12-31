@@ -13,7 +13,7 @@ export function WelcomeSection() {
             ICMC 2026
           </h3>
           <p className="text-xl md:text-2xl text-indigo-900 font-medium tracking-wide">
-            January, 2026 | Jaipur, India
+           8th-10th January, 2026 | Jaipur, India
           </p>
           <p className="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed">
             This edition of the conference will be held at Jaipur, India. It will be held under the aegis of Cryptology Research Society of India (CRSI), jointly organized by Society for Electronic Transactions and Security (SETS), The Institute of Mathematical Sciences (IMSc) and Chennai Mathematical Institute (CMI).

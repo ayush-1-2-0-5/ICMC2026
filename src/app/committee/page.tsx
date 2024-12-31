@@ -23,6 +23,15 @@ type Committee = {
 export default function CommitteePage() {
   const committees: Committee[] = [
     {
+      title: "Patron",
+      members: [
+        {
+          name: "Rahul Banerjee",
+          institution: "LNMIIT Jaipur"
+        }
+      ]
+    },
+    {
       title: "General Chair",
       members: [
         {
@@ -47,15 +56,6 @@ export default function CommitteePage() {
         {
           name: "Jayaprakash Kar",
           institution: "LNMIIT, Jaipur"
-        }
-      ]
-    },
-    {
-      title: "Patron",
-      members: [
-        {
-          name: "Rahul Banerjee",
-          institution: "LNMIIT Jaipur"
         }
       ]
     }

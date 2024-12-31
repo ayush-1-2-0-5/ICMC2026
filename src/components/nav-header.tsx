@@ -74,7 +74,7 @@ export function NavHeader() {
               </Link>
               <div className="text-center md:text-left">
                 <h1 className="text-xl md:text-2xl font-bold">12th International Conference on Mathematics and Computing</h1>
-                <p className="text-sm">8th to 10th January 2026 | Jaipur, India</p>
+                <p className="text-sm">8th - 10th January 2026 | Jaipur, India</p>
               </div>
             </div>
             
