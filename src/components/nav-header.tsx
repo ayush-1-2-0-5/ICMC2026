@@ -64,7 +64,7 @@ export function NavHeader() {
   }, [pathname])
 
   return (
-    <header className="relative z-50">
+    <header className="z-50 fixed-header">
       <div className="bg-gradient-to-r from-orange-600 to-orange-400 text-white">
         <nav className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
