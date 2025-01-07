@@ -27,7 +27,7 @@ export function AboutSection() {
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="w-full md:w-1/4 flex justify-center md:justify-start">
               <Image
-                src="/icmclogo.jpg"
+                src="/icmcnewlogo.jpg"
                 alt="Conference Logo"
                 width={200}
                 height={200}

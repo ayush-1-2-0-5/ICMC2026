@@ -10,9 +10,7 @@ const icmcYears = [
   { year: "ICMC 2019", link: "https://abc.com/icmc-2019" },
   { year: "ICMC 2018", link: "https://abc.com/icmc-2018" },
   { year: "ICMC 2017", link: "https://abc.com/icmc-2017" },
-  { year: "ICMC 2016", link: "https://abc.com/icmc-2016" },
   { year: "ICMC 2015", link: "https://abc.com/icmc-2015" },
-  { year: "ICMC 2014", link: "https://abc.com/icmc-2014" },
   { year: "ICMC 2013", link: "https://abc.com/icmc-2013" }
 ];
 

@@ -11,7 +11,7 @@ export default function ICMCAbout() {
           <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
             <div className="w-48 h-48 relative flex-shrink-0">
               <Image
-                src="/icmclogo.jpg"
+                src="/icmcnewlogo.jpg"
                 alt="ICMC Logo"
                 width={192}
                 height={192}

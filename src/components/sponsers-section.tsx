@@ -1,21 +1,17 @@
 "use client"
 
 import Link from "next/link";
-
-// Object holding the ICMC links for each year
 const icmcLinks = {
   "ICMC 2025": "https://events.iitbhilai.ac.in/icmc2025/",
-  "ICMC 2024": "https://link.springer.com/book/10.1007/978-981-99-3080-7",
-  "ICMC 2023": "https://link.springer.com/book/10.1007/978-981-19-9307-7",
+  "ICMC 2024": "http://icmc2024.kalasalingam.ac.in/",
+  "ICMC 2023": "https://www.bits-goa.ac.in/ICMC/",
   "ICMC 2022": "https://link.springer.com/book/10.1007/978-981-19-9307-7",
   "ICMC 2021": "https://link.springer.com/book/10.1007/978-981-16-6890-6",
   "ICMC 2020": "https://link.springer.com/book/10.1007/978-981-15-8061-1",
   "ICMC 2019": "https://link.springer.com/book/10.1007/978-981-15-5411-7",
   "ICMC 2018": "https://link.springer.com/book/10.1007/978-981-13-0023-3",
   "ICMC 2017": "https://link.springer.com/book/10.1007/978-981-10-4642-1",
-  "ICMC 2016": "https://abc.com/icmc-2016",
   "ICMC 2015": "https://link.springer.com/book/10.1007/978-81-322-2452-5",
-  "ICMC 2014": "https://abc.com/icmc-2014",
   "ICMC 2013": "https://link.springer.com/book/10.1007/978-81-322-1952-1",
 };
 
